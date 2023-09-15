@@ -27,7 +27,7 @@ export const Login = () => {
         <div className="hero min-h-screen bg-base-200">
         <div className="hero-content text-center">
             <div className="max-w-md">
-            <h1 className="text-5xl font-bold">Hello there</h1>
+            <h1 className="text-5xl font-bold">Hello there 👋</h1>
             <p className="py-6">Welcome to my chat! Please log in to proceed to the chat page. Feel free to leave feedback on my GithHub page.</p>
             <button className="btn btn-primary" onClick={handleLogin}>Log in with Google!</button>
             </div>

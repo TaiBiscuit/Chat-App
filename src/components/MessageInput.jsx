@@ -34,7 +34,7 @@ export const MessageInput = () => {
 
     return (
         <>
-        <div className='bg-gray-200 fixed bottom-0 w-fit py-10 shadow-lg'>
+        <div className='bg-gray-200 w-1/2 fixed bottom-0 w-fit py-10 shadow-lg'>
             <form action="" className='flex px-4' onSubmit={handleMessage}>
                 <input type="text" value={value} onChange={ e => setValue(e.target.value) } className='input w-full focus:outline-none bg-gray-100 rounded-r-none'/>
                 <button type='submit' className='w-auto bg-gray-500 text-white rounded-r-large px-5 text-sm'>Send</button>

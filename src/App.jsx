@@ -10,13 +10,15 @@ function App() {
 
   return (
     <>
-    <AuthProvider>
-      <Navbar/>
-      <Routes>
-        <Route path="/" element={<Login/>} />
-        <Route path="/chat" element={<Private><Chat/></Private>} />
-      </Routes>
-    </AuthProvider>
+    <div className='w-full h-full flex justify-center'>
+      <AuthProvider>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Login/>} />
+          <Route path="/chat" element={<Private><Chat/></Private>} />
+        </Routes>
+      </AuthProvider>
+    </div>
     </>
   )
 }

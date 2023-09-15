@@ -7,8 +7,10 @@ export const Chat = () => {
     
     return (
         <>
-        <ChatBox/>
-        <MessageInput/>
+        <div className='chat-box w-1/2 relative bg-white pt-20'>
+            <ChatBox/> 
+            <MessageInput/>
+        </div>
         </>
     )
 }

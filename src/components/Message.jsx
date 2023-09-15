@@ -8,7 +8,7 @@ export const Message = ({message}) => {
 
     return (
         <>
-        <div className={`chat ${message.uid === currentUser.uid ? "chat-end" : "chat-start"}`}>
+        <div className={`chat ${message.uid === currentUser.uid ? "chat-end mr-4" : "chat-start"}`}>
         <div className="chat-image avatar">
             <div className="w-10 rounded-full">
             <img src={message.avatar} />
