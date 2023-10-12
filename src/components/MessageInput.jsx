@@ -13,10 +13,8 @@ export const MessageInput = () => {
     const [showEmoji, setShowEmoji] = useState(false);
     const { currentUser } = UserAuth();
 
-
     const addEmoji = (e) => {
         setValue(e.native)
-        console.log(e)
     }
 
     const handleMessage = async (e) => {
@@ -29,7 +27,6 @@ export const MessageInput = () => {
 
         try { 
             const { uid, displayName, photoURL} = currentUser;
-            console.log(currentUser)
             await addDoc(collection(db, "messages"), {
                 txt: value,
                 name: displayName,
@@ -45,13 +42,9 @@ export const MessageInput = () => {
 
     return (
         <>
-        <div className='bg-gray-200 w-1/2 fixed bottom-0 w-fit py-10 shadow-lg'>
-            <form action="" className='flex px-4' onSubmit={handleMessage}>
-                <span onClick={() => setShowEmoji(!showEmoji)}>
-                    <BsEmojiSmile size={40} className='fixed bottom-0'/>
-                </span>
+        <div className='bg-gray-200 w-1/2 fixed bottom-0 py-10 shadow-lg'>
                 {showEmoji && (
-                <div>
+                <div className='float-up'>
                 <Picker
                   data={data}
                   emojiSize={20}
@@ -61,8 +54,12 @@ export const MessageInput = () => {
                 />
                 </div>
                 )}
+            <form action="" className='flex px-4 ' onSubmit={handleMessage}>
+                <span onClick={() => setShowEmoji(!showEmoji)}>
+                    <BsEmojiSmile size={40} className=' bottom-0 mr-2 rounded-full hover:bg-slate-100'/>
+                </span>
                 <input type="text" value={value} onChange={ e => setValue(e.target.value)}  id="input-text" className='input w-full focus:outline-none bg-gray-100 rounded-r-none'/>
-                <button type='submit' className='w-auto bg-gray-500 text-white rounded-r-large px-5 text-sm'>Send</button>
+                <button type='submit' className='w-auto bg-gray-500 text-white rounded-r-large px-5 text-sm hover:bg-slate-800'>Send</button>
             </form>
         </div>
         </>
